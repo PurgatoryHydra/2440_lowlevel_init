@@ -221,5 +221,5 @@ SetupStack:
 	orr r1, r0, #MODE_SVC
 	msr cpsr, r1
 	ldr sp, =ADDRESS_STACK_SVC
-
+	mov pc, lr
 	
