@@ -174,6 +174,16 @@ entry_reset:
 	ldr r1, =0x20
 	str r1, [r0]
 
+	/* enable DM9000 r/w on bank4, 16bit */
+	ldr r0, =BWSCON
+	ldr r1, [r0]
+	orr r1, r1, #(0x1 << 16)
+	str r1, [r0]
+
+/*	ldr r0, =BANKCON4
+	ldr r1, =(3 << 15 + 0 << 2 + 1)
+	str r1, [r0]*/
+
 	/*delay some time*/
 	mov r0, #1000
 1:
